@@ -1,6 +1,6 @@
 ﻿function SceneView() {
     this.imgCnt = 10;
-    this.flkCnt = 600;
+    this.flkCnt = 300;
     this.ticked = true;
     this.sizeRange = 100;
     this.imgSize = 64;

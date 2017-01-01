@@ -60,7 +60,7 @@ Flake.prototype.tick = function (timeGap) {
     var cross = {x:0, y:0};
 
 
-    if (Math.random() > 0.4 &&  this.size < 0.7 && this.mesh.FindCross(this.x, this.y, newX, newY, cross))
+    if (Math.random() > 0.4 &&  this.mesh.FindCross(this.x, this.y, newX, newY, cross))
     {
         newX = cross.x;
         newY = cross.y;

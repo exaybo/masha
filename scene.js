@@ -31,6 +31,11 @@
     this.ctxFrozen.canvas.width = window.innerWidth;
     this.ctxFrozen.canvas.height = window.innerHeight
 
+    this.grd = this.ctx.createLinearGradient(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerWidth);
+    this.grd.addColorStop(0.000, 'rgba(0, 16, 109, 1.000)');
+    this.grd.addColorStop(1.000, 'rgba(0, 135, 153, 1.000)');
+
+
     //flakes
     this.flakesAry = new Array();
     for (var i = 0; i < this.flkCnt; i++) {
@@ -65,6 +70,10 @@
         t.ctxFrozen.canvas.height = window.innerHeight;
         t.mesh.Init(window.innerWidth, window.innerHeight);
 
+        t.grd = t.ctx.createLinearGradient(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerWidth);
+        t.grd.addColorStop(0.000, 'rgba(0, 16, 109, 1.000)');
+        t.grd.addColorStop(1.000, 'rgba(0, 135, 153, 1.000)');
+
         for (var i = 0; i < t.flkCnt; i++) {
             t.flakesAry[i].canvasResized(window.innerWidth, window.innerHeight);
             t.flakesAry[i].init(true);
@@ -87,11 +96,7 @@ SceneView.prototype.draw = function (timeGap) {
     */
 
     //clear display
-    // Create gradient
-    this.grd = this.ctx.createLinearGradient(window.innerWidth/2, 0, window.innerWidth/2, window.innerWidth);
-    // Add colors
-    this.grd.addColorStop(0.000, 'rgba(0, 16, 109, 1.000)');
-    this.grd.addColorStop(1.000, 'rgba(0, 135, 153, 1.000)');
+    
     this.ctx.fillStyle = this.grd ;//"#000044";
 
     this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
